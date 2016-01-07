@@ -13,6 +13,8 @@
 		3C411A3D1C3E105A00F39B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C411A3B1C3E105A00F39B50 /* LaunchScreen.storyboard */; };
 		3C411A451C3E129500F39B50 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C411A441C3E129500F39B50 /* MoviesViewController.swift */; };
 		3C411A481C3E29F900F39B50 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C411A471C3E29F900F39B50 /* MovieCell.swift */; };
+		3C411A4B1C3E37A300F39B50 /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C411A4A1C3E37A300F39B50 /* collectionViewController.swift */; };
+		3C411A4D1C3E390900F39B50 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C411A4C1C3E390900F39B50 /* CollectionViewCell.swift */; };
 		91A0E325A383804FFEC05BED /* Pods_popcorn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB75D0D66194914DCDB79DE /* Pods_popcorn.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		3C411A3E1C3E105A00F39B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C411A441C3E129500F39B50 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		3C411A471C3E29F900F39B50 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		3C411A4A1C3E37A300F39B50 /* collectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
+		3C411A4C1C3E390900F39B50 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		87B01D56F3A6B27F4FB00918 /* Pods-popcorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popcorn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-popcorn/Pods-popcorn.debug.xcconfig"; sourceTree = "<group>"; };
 		9CB75D0D66194914DCDB79DE /* Pods_popcorn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popcorn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD9A78C890F29EAB36145A7 /* Pods-popcorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popcorn.release.xcconfig"; path = "Pods/Target Support Files/Pods-popcorn/Pods-popcorn.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,7 +67,7 @@
 		3C411A311C3E105A00F39B50 /* popcorn */ = {
 			isa = PBXGroup;
 			children = (
-				3C411A491C3E2A0700F39B50 /* view controllers */,
+				3C411A491C3E2A0700F39B50 /* controllers */,
 				3C411A461C3E29C400F39B50 /* views */,
 				3C411A321C3E105A00F39B50 /* AppDelegate.swift */,
 				3C411A361C3E105A00F39B50 /* Main.storyboard */,
@@ -78,16 +82,18 @@
 			isa = PBXGroup;
 			children = (
 				3C411A471C3E29F900F39B50 /* MovieCell.swift */,
+				3C411A4C1C3E390900F39B50 /* CollectionViewCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
 		};
-		3C411A491C3E2A0700F39B50 /* view controllers */ = {
+		3C411A491C3E2A0700F39B50 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3C411A441C3E129500F39B50 /* MoviesViewController.swift */,
+				3C411A4A1C3E37A300F39B50 /* collectionViewController.swift */,
 			);
-			name = "view controllers";
+			name = controllers;
 			sourceTree = "<group>";
 		};
 		3D877EE350DB83ADDAC8DE61 /* Pods */ = {
@@ -230,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C411A4D1C3E390900F39B50 /* CollectionViewCell.swift in Sources */,
+				3C411A4B1C3E37A300F39B50 /* collectionViewController.swift in Sources */,
 				3C411A331C3E105A00F39B50 /* AppDelegate.swift in Sources */,
 				3C411A451C3E129500F39B50 /* MoviesViewController.swift in Sources */,
 				3C411A481C3E29F900F39B50 /* MovieCell.swift in Sources */,
