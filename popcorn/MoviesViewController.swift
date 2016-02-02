@@ -11,14 +11,15 @@ import AFNetworking
 import EZLoadingActivity
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var movies : [NSDictionary]?
     var refreshControl : UIRefreshControl!
+    var endpoint : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("view did load")
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
@@ -26,7 +27,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(URL: url!)
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
@@ -34,6 +35,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             delegateQueue:NSOperationQueue.mainQueue()
         )
         
+        EZLoadingActivity.show("Loading...", disableUI: true)
         
         let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
@@ -70,9 +72,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     override func viewDidAppear(animated: Bool) {
-        print("OMG STARTING")
-        EZLoadingActivity.show("Loading...", disableUI: true)
+        print("view did appear")
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -88,26 +90,37 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         let movie = movies![indexPath.row]
-        let title = movie["title"] as! String
-        let overview = movie["overview"] as! String
-        let posterPath = movie["poster_path"] as! String
-        let baseUrl  = "https://image.tmdb.org/t/p/w342"
-        let imageUrl = NSURL(string: baseUrl + posterPath)
-        cell.posterView.setImageWithURL(imageUrl!)
+        
+        let title = movie["title"] as? String
         cell.titleLabel.text = title
+        
+        let overview = movie["overview"] as? String
         cell.overviewLabel.text = overview
+        
+        let baseUrl  = "https://image.tmdb.org/t/p/w342"
+        
+        if let posterPath = movie["poster_path"] as? String {
+            let imageUrl = NSURL(string: baseUrl + posterPath)
+            cell.posterView.setImageWithURL(imageUrl!)
+        }
         return cell
     }
-
     
-    /*
+    
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let movie = movies![indexPath!.row]
+        let detailViewController = segue.destinationViewController as! DetailViewController
+        detailViewController.movie = movie
+        print("prepare for segue")
     }
-    */
-
+    
+    
 }

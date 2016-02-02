@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3C467A1C5A5302008DACF1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C46791C5A5302008DACF1 /* DetailViewController.swift */; };
 		3C411A331C3E105A00F39B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C411A321C3E105A00F39B50 /* AppDelegate.swift */; };
 		3C411A381C3E105A00F39B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C411A361C3E105A00F39B50 /* Main.storyboard */; };
 		3C411A3A1C3E105A00F39B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C411A391C3E105A00F39B50 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C3C46791C5A5302008DACF1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3C411A2F1C3E105A00F39B50 /* popcorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = popcorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C411A321C3E105A00F39B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C411A371C3E105A00F39B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				3C411A441C3E129500F39B50 /* MoviesViewController.swift */,
 				3C411A4A1C3E37A300F39B50 /* collectionViewController.swift */,
+				3C3C46791C5A5302008DACF1 /* DetailViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				3C411A4D1C3E390900F39B50 /* CollectionViewCell.swift in Sources */,
 				3C411A4B1C3E37A300F39B50 /* collectionViewController.swift in Sources */,
 				3C411A331C3E105A00F39B50 /* AppDelegate.swift in Sources */,
+				3C3C467A1C5A5302008DACF1 /* DetailViewController.swift in Sources */,
 				3C411A451C3E129500F39B50 /* MoviesViewController.swift in Sources */,
 				3C411A481C3E29F900F39B50 /* MovieCell.swift in Sources */,
 			);

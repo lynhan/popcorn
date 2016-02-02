@@ -92,11 +92,12 @@ extension collectionViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("posterCell", forIndexPath: indexPath) as! CollectionViewCell
         let movie = movies![indexPath.row]
-        let posterPath = movie["poster_path"] as! String
-        let baseUrl  = "https://image.tmdb.org/t/p/w342"
-        let imageUrl = NSURL(string: baseUrl + posterPath)
-        cell.posterView.setImageWithURL(imageUrl!)
-
+        let posterPath = movie["poster_path"] as? String
+        if posterPath != nil {
+            let baseUrl  = "https://image.tmdb.org/t/p/w342"
+            let imageUrl = NSURL(string: baseUrl + posterPath!)
+            cell.posterView.setImageWithURL(imageUrl!)
+        }
         return cell
     }
 }
